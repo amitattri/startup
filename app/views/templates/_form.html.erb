@@ -1,0 +1,33 @@
+<%= tinymce_assets %>
+<%= simple_form_for @template do |f| %>
+    <div class="row">
+      <div class="col-sm-12">
+        <% if @template.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@template.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+            <ul>
+            <% @template.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.input :body,  as: :text, input_html: {class: 'tinymce'} %>
+                        <%= tinymce %>
+      </div>
+       <div class="col-sm-6">
+        <%= f.input :subject %>
+      </div>
+       <div class="col-sm-6">
+        <%= f.input :active_link %>
+      </div>
+      <div class="clearfix"></div>
+      
+      <div class="col-sm-6">
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

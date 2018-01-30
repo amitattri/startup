@@ -1,0 +1,28 @@
+<%= simple_form_for @member do |f| %>
+    <div class="row">
+      <div class="col-sm-12">
+        <% if @member.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+            <ul>
+            <% @member.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.input :email %>
+      </div>
+       <div class="col-sm-6">
+        <%= f.association :group, collection: Group.order(:name), prompt: "Choose a Company" %>
+      </div>
+      <div class="clearfix"></div>
+      
+      <div class="col-sm-6">
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

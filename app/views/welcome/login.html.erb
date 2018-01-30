@@ -1,0 +1,11 @@
+<% @page_title = "UserAuth | Login" -%>
+<h3>Welcome to JetSetIndia App</h3>
+<div class= "Sign_Form">  
+  <h1>Log in</h1>
+  <p id="notice"><%= notice %></p>
+  <%= form_tag(:action => 'login') do %>
+    <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p> 
+    <p>Password:</br> <%= password_field_tag :login_password %></p> 
+    <%= submit_tag("Log In") %>
+  <% end %>
+</div>

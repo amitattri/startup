@@ -1,0 +1,21 @@
+<div class="sidebar_con">
+  <ul class="list-unstyled">
+    <li class="list-group-item">
+      <%= link_to root_path(active_page: 'dashboard'), class: params[:active_page] == 'dashboard' ? 'active_link' : '' do %>
+         <i class="fa fa-tachometer sidebar_icon" aria-hidden="true"></i>
+          <p>Dashboard</p>
+      <% end %>
+    </li>
+   <li>
+     <%= link_to "Groups", groups_path %>
+   </li>
+    <li>
+      <%= link_to "Members", members_path %>
+    </li>
+    <li>
+      <%= link_to "Templates", templates_path %>
+    </li>
+
+    
+  </ul>
+</div>  

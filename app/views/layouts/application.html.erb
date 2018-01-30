@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JetIndia</title>
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://use.fontawesome.com/ad5113ed73.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render partial: 'shared/header' %>
+<div class="container-fluid">
+  <% if user_signed_in?  %>
+      <div class="row">
+        <div class="col-sm-1 col-xs-3 toggle_class no-padding">
+          <%= render partial: 'shared/sidebar' %>
+        </div>
+        <div class="col-sm-11 col-xs-9 right_content_con no-padding">
+          <%= render partial: 'shared/alerts' %>
+          <%= yield %>
+        </div>
+      </div>
+  <%- else %>
+      <%= render partial: 'shared/alerts' %>
+      <%= yield %>
+  <%- end %>
+</div>
+</body>
+</html>

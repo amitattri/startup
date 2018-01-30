@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default top-navbar admin_header" style="padding: 0">
+  <div class="container-fluid" style="margin: inherit">
+    <div class="navbar-header">
+      <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
+      <span class="sidebar_nav_click">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    </div>
+     <ul class="row nav navbar-nav navbar-right">
+       <div class="row">
+         <% if user_signed_in? %>
+             <li class="col-sm-6">
+               <a class="navbar-brand" style="color: #fff; margin-top: 5px" >JetSetGo Admin</a>
+             </li>
+             <li class="col-sm-6 text-right">
+               <%= link_to 'Sign out', destroy_user_session_path, method: :delete, style: 'color: #fff; margin-top: 13px; display: inline-block;' %>
+             </li>
+             <!--<li><a href="Javascript:void(0)"><%#= current_user.full_name %></a></li>-->
+         <%- end %>
+       </div>
+      </ul>
+  </div>
+</nav>
+
+<script type="text/javascript" charset="utf-8">
+    $('.sidebar_nav_click').click(function(){
+        $('.toggle_class').toggle();
+        $('.right_content_con').toggleClass('col-sm-11 col-xs-9').toggleClass('col-sm-12 col-xs-12');
+    });
+</script>

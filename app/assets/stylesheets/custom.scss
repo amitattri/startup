@@ -1,0 +1,166 @@
+body{
+  margin: 0 !important;
+  background-color: #eeeeee !important;
+  font-size: 14px !important;
+}
+.admin-login-con{
+  background: #ffffff;
+  margin-top: 50px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  min-height: 400px;
+  .login-heading{
+    font-size: 24px;
+    border-bottom: 2px solid #cccccc;
+    width: 100%;
+    padding: 15px 0 3px 0;
+    margin-bottom: 20px;
+    display: block;
+    .form-group{
+
+    }
+  }
+}
+.admin_header{
+  background-color: #333c48;
+  border-radius: 0px;
+  border: none;
+}
+
+.sidebar_nav_click{
+  background-color: #222932;
+  height: 50px;
+  padding: 15px 15px;
+  float: left;
+  position: relative;
+  left: -15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.sidebar_con {
+  background-color: #222932;
+  height: 100vh;
+  overflow-x: scroll;
+  ul{
+    li{
+      background-color: transparent;
+      padding: 0;
+      a{
+        color: #778e9c;
+        padding: 8px;
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+        border-bottom: 1px solid #0e1115;
+        text-align: center;
+        .sidebar_icon{
+          font-size: 40px
+        }
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+.admin-main-con{
+  h2{
+    font-size: 24px;
+    margin: 15px 0;
+  }
+  .admin_content_body{
+    overflow: scroll;
+    padding: 15px 0;
+    height: 95vh;
+    background-color: #ffffff;
+    .widget_main{
+      background-color: #f5f5f5;
+      min-height: 155px;
+      margin-bottom: 20px;
+      .main_url_widget{
+        color: #000000;
+        display: inline-block;
+        width: 100%;
+      }
+      .main_url_widget:hover{
+        text-decoration: none;
+        background-color: transparent;
+      }
+      .widget_content{
+        padding: 20px 0;
+        .icon-size{
+          font-size: 60px;
+        }
+      }
+      h3{
+        margin: 0;
+        font-size: 16px;
+        padding: 10px;
+        color: #ffffff;
+      }
+      h3.user{
+        background-color: #dc4646;
+      }
+      h3.airport{
+        background-color: #569dda;
+      }
+      h3.aircraft{
+        background-color: #56dab5;
+      }
+    }
+  }
+}
+.box-activity{
+  border: 1px solid #bb965d;
+  padding: 15px 0 10px 0;
+  margin: 15px 0;
+  position: relative;
+  .activity_heading{
+    position: absolute;
+    top: -14px;
+    left: 5px;
+    background-color: #ffffff;
+    font-size: 17px;
+    padding: 0 5px;
+    color: #bb965d;
+  }
+  .col-sm-6{
+    float: left;
+    width: 50%;
+  }
+}
+.table{
+  tr:nth-child(even){
+    background-color: #e6effb !important;
+  }
+  tr:nth-child(odd){
+    background-color: #ffffff !important;
+  }
+  tr.info{
+    background-color: #516a8a !important;
+    color: #ffffff;
+  }
+}
+.post_main{
+  width: 100%;
+  background: #fbfbfb;
+  border: 1px solid #ececec;
+  padding: 15px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(51,60,72,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(51,60,72,1);
+  box-shadow: 0px 0px 5px 0px rgba(51,60,72,1);
+  h2{
+    font-size: 20px;
+    margin: 5px 0;
+    color: #304869;
+  }
+  span.date{
+    font-size: 12px;
+    margin: 5px 0;
+    color: #949494;
+  }
+}
