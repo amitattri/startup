@@ -1,40 +1,44 @@
-<div class="admin-main-con">
-  <div class="col-sm-12">
-    <div class="admin_content_body">
-      <div class="col-sm-12 col-xs-12">
-        <%= link_to 'Add Group', new_group_path, class: 'btn btn-primary', style: 'margin-bottom: 10px;' %>
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-6">
+        <h1 class="page-header">Groups</h1>
       </div>
-      <div class="clearfix"></div>
-      <div class="row">
-        <div class="col-sm-12">
-          <table class="table  table-striped table-data-con">
+      <div class="col-lg-6 page-header">
+        <%= link_to "New Group", new_group_path, class: 'btn btn-primary pull-right', style: 'display: inline-block;'%>
+      <div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          List Member Gropus
+        </div>
+        <div class="panel-body">
+          <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead>
-            <tr class="info">
-              <td>Name</td>
-              <td>Members Count</td>
-              <td></td>
-            </tr>
+              <tr>
+                <th>Group Name</th>
+                <th>Member Available</th>
+                <!-- <th>Platform(s)</th>
+                <th>Engine version</th>
+                <th>CSS grade</th> -->
+              </tr>
             </thead>
             <tbody>
-              <% @groups.each do |group| %>
-                <tr>
-                  <td>
-                    <%= group.name %>
-                  </td>
-                  <td>
-                    <%= group.members.count %>
-                  </td>
-                  <td>
-                    <%= link_to edit_group_path(group) do %>
-                        Edit
-                    <% end %>
-                  </td>
-                </tr>
-              <% end %>
+              <tr class="gradeA">
+                <% @groups.each do |group| %>
+                  <td><%= group.name %></td>
+                  <td><%= group.members.count %></td>
+                  <!-- <td></td>
+                  <td></td> -->
+                <% end %>
+              </tr>
             </tbody>
-          </table>
+          </table>  
         </div>
-      </div>
+      </div>  
     </div>
   </div>
 </div>

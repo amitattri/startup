@@ -6,7 +6,14 @@
           Add Member
         </div>
         <div class="panel-body">
-         <%= render 'form' %>
+          <div class="panel-body">
+		        <div class="row">
+						  <%= form_tag import_members_path , multipart: true do %>
+						    <%= file_field_tag :file %>
+						    <%= submit_tag "Update Watch Hour" %>
+						  <% end %>
+					  </div>
+					</div>
           
         </div>
       </div>  

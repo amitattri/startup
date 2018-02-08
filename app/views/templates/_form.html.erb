@@ -1,4 +1,5 @@
 <%= tinymce_assets %>
+
 <%= simple_form_for @template do |f| %>
     <div class="row">
       <div class="col-sm-12">
@@ -14,15 +15,25 @@
           </div>
         <% end %>
       </div>
-      <div class="col-sm-6">
-        <%= f.input :body,  as: :text, input_html: {class: 'tinymce'} %>
-                        <%= tinymce %>
-      </div>
        <div class="col-sm-6">
         <%= f.input :subject %>
       </div>
-       <div class="col-sm-6">
+      <div class="col-sm-6">
         <%= f.input :active_link %>
+      </div>
+      <div class="col-sm-6">
+        <label>Select Target Group</label><br>
+        <%= select_tag("groups[]", options_for_select(Group.all.collect { |ff| [ff.name, ff.id] }), {:multiple=>true, :id => "groups"}) %>
+      </div>
+      <div class="col-sm-6">
+        <label>Select Date</label><br>
+        <%= date_field_tag :send_date %>
+      </div>
+      <br>
+
+      <div class="col-sm-12">
+        <%= f.input :body,  as: :text, input_html: {class: 'tinymce'} %>
+        <%= tinymce %>
       </div>
       <div class="clearfix"></div>
       
@@ -31,3 +42,15 @@
       </div>
     </div>
 <% end %>
+
+<script type="text/javascript">
+  $('#groups').chosen({
+    no_results_text: 'No results matched',
+    width: '100%'
+  });
+</script>
+<style type="text/css">
+  #send_date{
+    width: 100%
+  }
+</style>

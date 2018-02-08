@@ -1,11 +1,27 @@
-<% @page_title = "UserAuth | Login" -%>
-<h3>Welcome to JetSetIndia App</h3>
-<div class= "Sign_Form">  
-  <h1>Log in</h1>
-  <p id="notice"><%= notice %></p>
-  <%= form_tag(:action => 'login') do %>
-    <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p> 
-    <p>Password:</br> <%= password_field_tag :login_password %></p> 
-    <%= submit_tag("Log In") %>
-  <% end %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign In</h3>
+                </div>
+                <div class="panel-body">
+                    <%= form_tag(:action => 'login') do %>
+                        <fieldset>
+                          <div class="form-group">
+                            <%= text_field_tag(:username_or_email), class: "form-control", placeholder: "E-mail", name: "email", type: "email"  %>
+                          </div>
+                            <div class="form-group">
+                                <%= password_field_tag :login_password, class: "form-control", placeholder: "E-mail"   %>
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                            </div>
+                            <div class="form-group">
+					           <%= submit_tag("Log In"), class: "btn btn-lg btn-success btn-block" %>
+                            </div>
+                        </fieldset>
+					<% end %>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

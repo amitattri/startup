@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
-  resources :members
-  resources :groups
-  resources :templates
   devise_for :users
+  resources :members do
+    collection do 
+      post :import
+      get :upload_file
+    end  
+  end  
 
-  resources :users
+  resources :groups
+  resources :templates 
+
+  #resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'welcome#index'
   post '/tinymce_assets' => 'tinymce_assets#create'
 
  # post 'login' => "welcome#login"

@@ -33,8 +33,10 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'aws-sdk'
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
-
+gem "font-awesome-rails"
+gem 'chosen-rails'
 gem "httparty"
+gem 'delayed_job_active_record'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,6 +49,7 @@ gem "httparty"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem "letter_opener"
 end
 
 group :development do

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   before_action :authenticate_user!
+  before_action :authenticate_user!
   before_filter :set_post, only: [:edit, :update]
 
   def index

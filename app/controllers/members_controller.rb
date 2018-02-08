@@ -37,6 +37,15 @@ class MembersController < ApplicationController
     end
   end
 
+  def upload_file
+    @member = Member.new
+  end  
+
+  def import
+    @member = Member.import(params[:file])
+    redirect_to members_path
+  end  
+
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
@@ -69,6 +78,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:email, :group_id)
+      params.require(:member).permit(:name, :email, :phone, :group_id)
     end
 end

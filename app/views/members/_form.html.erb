@@ -1,6 +1,7 @@
-<%= simple_form_for @member do |f| %>
-    <div class="row">
-      <div class="col-sm-12">
+<div class="panel-body">
+  <div class="row">
+    <%= simple_form_for @member do |f| %>
+      <div class="col-lg-6">
         <% if @member.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
@@ -12,17 +13,21 @@
             </ul>
           </div>
         <% end %>
+        <div class="form-group">
+            <%= f.input :name %>
+        </div>
+        <div class="form-group">
+            <%= f.input :phone %>
+        </div>
+        <div class="form-group">
+            <%= f.input :email %>
+        </div>
+        <div class="form-group">
+            <%= f.association :group, collection: Group.order(:name), prompt: "Choose a Company" %>
+        </div>
+        <%= f.submit 'Save', class: 'btn btn-default' %>
       </div>
-      <div class="col-sm-6">
-        <%= f.input :email %>
-      </div>
-       <div class="col-sm-6">
-        <%= f.association :group, collection: Group.order(:name), prompt: "Choose a Company" %>
-      </div>
-      <div class="clearfix"></div>
-      
-      <div class="col-sm-6">
-        <%= f.submit 'Save', class: 'btn btn-primary' %>
-      </div>
-    </div>
-<% end %>
+    <% end %>
+  </div>
+</div>
+    

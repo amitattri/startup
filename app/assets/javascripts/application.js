@@ -11,20 +11,18 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_nested_form
 //= require jquery_ujs
-//= require tinymce-jquery
-//= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require metismenu.min
+//= require chosen-jquery
+//= require sb_admin
+//= require ./vendors/jquery_datatable.min
+//= require ./vendors/datatable_responsive
+//= require ./vendors/datatable_bootstrap.min
 
-$("document:ready", function() {
-  $(".tinymce").tinymce({
-    theme: "modern",
-    toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,uploadimage",
-    pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
-    plugins: ["uploadimage"],
-    relative_urls: false,
-    remove_script_host: false,
-    document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
-  })
-});
+$(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+

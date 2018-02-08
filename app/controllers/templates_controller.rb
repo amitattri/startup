@@ -24,10 +24,15 @@ class TemplatesController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
+    
     @template = Template.new(template_params)
+    @groups = params[:groups]
 
     respond_to do |format|
       if @template.save
+        @groups.each do |group|
+          GroupTemplate.create(group_id: group.to_i, template_id: @template.id, send_at: params[:send_date])
+        end  
         format.html { redirect_to templates_path, notice: 'template was successfully created.' }
         format.json { render :show, status: :created, location: @template }
       else
