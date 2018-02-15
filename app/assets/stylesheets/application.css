@@ -11,9 +11,9 @@
  * file per style scope.
  *
  *= require bootstrap.min
+ *= require sb_admin
  *= require metismenu.min
  *= require font-awesome
- *= require sb_admin
  *= require chosen
  *= require ./vendors/datatable_bootstrap
  *= require ./vendors/datatable_responsive

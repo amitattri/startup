@@ -37,6 +37,9 @@ gem "font-awesome-rails"
 gem 'chosen-rails'
 gem "httparty"
 gem 'delayed_job_active_record'
+
+gem 'roo'
+gem "iconv"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

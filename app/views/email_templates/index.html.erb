@@ -5,7 +5,7 @@
         <h1 class="page-header">Groups</h1>
       </div>
       <div class="col-lg-6 page-header">
-        <%= link_to "New Template", new_template_path, class: 'btn btn-primary pull-right', style: 'display: inline-block;'%>
+        <%= link_to "New Template", new_email_template_path, class: 'btn btn-primary pull-right', style: 'display: inline-block;'%>
       <div>
     </div>
   </div>
@@ -31,13 +31,17 @@
                     <%= template.subject %>
                   </td>
                   <td>
-                    <%= template.active_link %>
+                    <%= template.action_url %>
                   </td>
               
                   <td>
-                    <%= link_to edit_template_path(template) do %>
-                        Edit
+                    <%= link_to edit_email_template_path(template) do %>
+                      <i class="fa fa-edit"></i>edit
                     <% end %>
+                    <%= link_to email_templates_path(template) do %>
+                      <i class="fa fa-eye"></i>show
+                    <% end %>
+
                   </td>
                 </tr>
               <% end %>

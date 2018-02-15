@@ -1,11 +1,10 @@
 class CreateEmailTemplates < ActiveRecord::Migration
   def change
     create_table :email_templates do |t|
-      t.integer :template_id
-      t.string :member_id
-      t.string :status
-      t.datetime :send_date
-      t.string :member_token
+      t.text :body
+      t.string :subject
+      t.string :action_url
+      t.attachment :file
       t.timestamps null: false
     end
   end

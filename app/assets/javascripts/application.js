@@ -26,3 +26,7 @@ $(document).ready(function() {
         });
     });
 
+  $('.chosen').chosen({
+    no_results_text: 'No results matched',
+    width: '100%'
+  });

@@ -4,13 +4,11 @@ class Member < ActiveRecord::Base
 
 	def self.import(file)
 		
-		csv = CSV.parse(File.read(file.path)) 
-
-		csv.each do |row|
-	      byebug		
-		  Member.create!(name: row[0].split('@')[0], email: row[0], phone: row[1], group_id: 1)
-		end
-
-    end		
+	  spreadsheet = Roo::Spreadsheet.open(file.path)
+    (2..spreadsheet.last_row).each do |row_no|
+    	Member.create(name: spreadsheet.row(row_no)[0].split('@')[0], email: spreadsheet.row(row_no)[0], group_id: 1)
+    end 	
+    	
+  end		
 end
 

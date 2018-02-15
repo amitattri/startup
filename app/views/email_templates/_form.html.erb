@@ -19,16 +19,12 @@
         <%= f.input :subject %>
       </div>
       <div class="col-sm-6">
-        <%= f.input :active_link %>
+        <%= f.input :action_url, label: 'Action Url' %>
       </div>
       <div class="col-sm-6">
-        <label>Select Target Group</label><br>
-        <%= select_tag("groups[]", options_for_select(Group.all.collect { |ff| [ff.name, ff.id] }), {:multiple=>true, :id => "groups"}) %>
+        <%= f.input :file, label: "Add Attachment" %>
       </div>
-      <div class="col-sm-6">
-        <label>Select Date</label><br>
-        <%= date_field_tag :send_date %>
-      </div>
+
       <br>
 
       <div class="col-sm-12">
@@ -44,10 +40,7 @@
 <% end %>
 
 <script type="text/javascript">
-  $('#groups').chosen({
-    no_results_text: 'No results matched',
-    width: '100%'
-  });
+
 </script>
 <style type="text/css">
   #send_date{

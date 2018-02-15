@@ -8,7 +8,15 @@ Rails.application.routes.draw do
   end  
 
   resources :groups
-  resources :templates 
+  resources :email_templates 
+  resources :campaigns do 
+    member do 
+      post :start_campaign
+    end   
+    resources :campaign_reports
+  end  
+
+  get 'campaign_reports/:id' => "campaign_reports#show"
 
   #resources :users
 
