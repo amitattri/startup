@@ -31,6 +31,12 @@
         <%= f.input :body,  as: :text, input_html: {class: 'tinymce'} %>
         <%= tinymce %>
       </div>
+      <div class="col-sm-12">
+        <%= f.input :body_text,  as: :text %>
+      </div>
+
+      <br>
+
       <div class="clearfix"></div>
       
       <div class="col-sm-6">
@@ -39,11 +45,12 @@
     </div>
 <% end %>
 
-<script type="text/javascript">
-
-</script>
 <style type="text/css">
   #send_date{
     width: 100%
   }
+
+  
+
+
 </style>

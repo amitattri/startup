@@ -68,6 +68,6 @@ class EmailTemplatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def template_params
-      params.require(:email_template).permit(:body, :subject, :action_url)
+      params.require(:email_template).permit(:body, :subject, :action_url, :body_text)
     end
 end
